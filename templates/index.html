@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آلة حاسبة</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>آلة حاسبة</h2>
+    <form method="post">
+        <input type="text" name="num1" placeholder="الرقم الأول" required>
+        <input type="text" name="num2" placeholder="الرقم الثاني" required>
+        <select name="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">×</option>
+            <option value="divide">÷</option>
+        </select>
+        <button type="submit">احسب</button>
+    </form>
+    {% if result is not none %}
+        <h3>النتيجة: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
